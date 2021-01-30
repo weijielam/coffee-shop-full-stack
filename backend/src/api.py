@@ -105,7 +105,7 @@ def create_drink(payload):
 def update_drink(payload, id):
     try:
         data = request.get_json()
-        drink = Drink.query.filter_by(Drink.id==id).one_or_none()
+        drink = Drink.query.filter_by(id=id).one_or_none()
         
         # data validation
         if (drink is None):
@@ -125,7 +125,10 @@ def update_drink(payload, id):
     except:
         abort(400)
     
-    return jsonify({'success': True, 'drinks': [drink.long()]}), 200
+    return jsonify({
+        'success': True, 
+        'drinks': [drink.long()]
+    }), 200
 
 '''
 @TODO implement endpoint
@@ -138,17 +141,18 @@ def update_drink(payload, id):
         or appropriate status code indicating reason for failure
 '''
 @app.route('/drinks/<int:id>', methods=['DELETE'])
-@requires_auth('delete:drink')
-def delete_drink(id):
-    drink = Drink.query.filter_by(Drink.id==id).one_or_none()
-    
-    if not drink:
+@requires_auth('delete:drinks')
+def delete_drink(payload,id):
+    # drink = Drink.query.filter_by(Drink.id==id).one_or_none()
+    drink = Drink.query.filter_by(id = id).one_or_none()    
+    if drink is None:
         abort(404)
 
     try:
         drink.delete()
 
-    except:
+    except Exception as e:
+        print(e)
         abort(400)
 
     return jsonify({'success': True, 'delete': id}), 200
@@ -175,7 +179,7 @@ def bad_request(error):
         'success': False,
         'error': 400,
         'message': 'Bad Request'
-    })
+    }), 400
 
 @app.errorhandler(401)
 def unauthorized(error):

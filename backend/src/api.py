@@ -16,7 +16,7 @@ CORS(app)
 !! NOTE THIS WILL DROP ALL RECORDS AND START YOUR DB FROM SCRATCH
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 '''
-# db_drop_and_create_all()
+db_drop_and_create_all()
 
 ## ROUTES
 '''
@@ -102,7 +102,7 @@ def create_drink(payload):
 @app.route('/drinks/<int:id>', methods=['PATCH'])
 @requires_auth('patch:drinks')
 
-def update_drink(id):
+def update_drink(payload, id):
     try:
         data = request.get_json()
         drink = Drink.query.filter_by(Drink.id==id).one_or_none()
@@ -110,12 +110,22 @@ def update_drink(id):
         # data validation
         if (drink is None):
             abort(404)
+
+        title = data['title']
+        recipe = json.dumps(data['recipe'])
+
+        if title: 
+            drink.title = title
+
+        if recipe: 
+            drink.recipe = json.dumps(data['recipe'])
         
-        print('placeholder')
+        drink.update()
+    
     except:
         abort(400)
-        print('placeholder')
-
+    
+    return jsonify({'success': True, 'drinks': [drink.long()]}), 200
 
 '''
 @TODO implement endpoint
@@ -130,10 +140,18 @@ def update_drink(id):
 @app.route('/drinks/<int:id>', methods=['DELETE'])
 @requires_auth('delete:drink')
 def delete_drink(id):
+    drink = Drink.query.filter_by(Drink.id==id).one_or_none()
+    
+    if not drink:
+        abort(404)
+
     try:
-        print('placeholder')
+        drink.delete()
+
     except:
-        print('placeholder')
+        abort(400)
+
+    return jsonify({'success': True, 'delete': id}), 200
 
 ## Error Handling
 '''
@@ -151,6 +169,22 @@ def delete_drink(id):
 @TODO implement error handler for 404
     error handler should conform to general task above 
 '''
+@app.errorhandler(400)
+def bad_request(error):
+    return jsonify({
+        'success': False,
+        'error': 400,
+        'message': 'Bad Request'
+    })
+
+@app.errorhandler(401)
+def unauthorized(error):
+    return jsonify({
+        "success": False,
+        "error": 401,
+        "message": 'Unauthorized'
+    }), 401
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({
@@ -180,3 +214,11 @@ def internal_server(error):
 @TODO implement error handler for AuthError
     error handler should conform to general task above 
 '''
+@app.errorhandler(AuthError)
+def handle_auth_error(ex):
+    """
+    Receive the raised authorization error and propagates it as response
+    """
+    response = jsonify(ex.error)
+    response.status_code = ex.status_code
+    return response

@@ -105,6 +105,7 @@ def create_drink(payload):
 def update_drink(payload, id):
     try:
         data = request.get_json()
+        print('data', data)
         drink = Drink.query.filter_by(id=id).one_or_none()
         
         # data validation
@@ -122,7 +123,8 @@ def update_drink(payload, id):
         
         drink.update()
     
-    except:
+    except Exception as e:
+        print('EXCEPTION', e)
         abort(400)
     
     return jsonify({

@@ -83,7 +83,7 @@ def check_permissions(permission, payload):
         # cant identify user
     
     if permission not in payload['permissions']:
-        abort(403)
+        abort(401)
         # user does not have permissions
 
     return True

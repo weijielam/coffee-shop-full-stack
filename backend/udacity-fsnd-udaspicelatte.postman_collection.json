@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e8ad44ee-7536-4901-913c-46e718d56d9f",
+		"_postman_id": "a6a234d7-1a43-46d7-9295-5806caa8578c",
 		"name": "udacity-fsnd-udaspicelatte",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -14,7 +14,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -50,7 +49,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -81,7 +79,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -112,7 +109,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -144,7 +140,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -181,7 +176,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -217,7 +211,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -248,7 +241,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -289,7 +281,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -321,7 +312,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
 								"exec": [
 									"pm.test(\"Status code is 401\", function () {",
 									"    pm.response.to.have.status(401);",
@@ -362,7 +352,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f985b22c-34c4-4cfe-8308-f6fb98d799ac",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -372,7 +361,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "596425ac-59b4-4488-9f07-4c748e1ad082",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -390,7 +378,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "05cea6f9-9af0-4e60-9aad-4c8faf37ef4c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -426,7 +413,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "65a195fa-a734-44b7-a7e0-c629b32d1fbb",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -462,7 +448,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5050a5b9-2e15-474e-9981-0e61ec8d2ff1",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -504,7 +489,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec1488aa-b4d7-468a-89f5-03484009e69c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -520,6 +504,21 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImYtOGNEaDI1NGZlcEFvRTZGU3lhVyJ9.eyJpc3MiOiJodHRwczovL3dlaWppZWxhbS1mc25kLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExMDgxNjI0NDU1Njc5ODg5ODk0OCIsImF1ZCI6WyJjb2ZmZWUtc2hvcC1mc25kLXdlaSIsImh0dHBzOi8vd2VpamllbGFtLWZzbmQuZXUuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTYxMjAxOTg5NSwiZXhwIjoxNjEyMDI3MDk1LCJhenAiOiJXcGdGU0hJampDOTRTaDNZS0s0WjNkUjZHQnFZMzNEcCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6ZHJpbmtzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJwYXRjaDpkcmlua3MiLCJwb3N0OmRyaW5rcyJdfQ.erGNDjGVRDgrWqD0EOKyXK2cXi0_QuclDfLdCKxzDuSSbErA-BkTT7D5R2LTurvGw0H6pCUKoRF8AZkgtQAK8Jj40PD0P63O4lQVJhD2kerukAHzkdp0LMjm6pxUJIf1yZDEzZrBdv_DrFk9NwhiYbz261nC5YHBK0vJ2Kv3RfuCJSz-Ji6KlaA3VhK6GUdG6TnpKK0L6YT77lc7nNhdiQ_Nimy7W5dQyoeaJL2QzyOA8dEsBUnXrY-pFKSOvIfK1mOTmvkYwH44j9RWEGYRkOGWb671t1DrJSPBwCCuMiU0xjYHk2W1CbqCkyE3QZ60cnjZDZI7i48ItCzm32Hxcw",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "eyJhbGci{{Barista}}iJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImYtOGNEaDI1NGZlcEFvRTZGU3lhVyJ9.eyJpc3MiOiJodHRwczovL3dlaWppZWxhbS1mc25kLmV1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZmZhZmI3YTJkNjZhNzAwNmUxNWE5NjUiLCJhdWQiOiJjb2ZmZWUtc2hvcC1mc25kLXdlaSIsImlhdCI6MTYxMTY5NzMzNywiZXhwIjoxNjExNzA0NTM3LCJhenAiOiJXcGdGU0hJampDOTRTaDNZS0s0WjNkUjZHQnFZMzNEcCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmRyaW5rcy1kZXRhaWxzIl19.OCNR1PSk2EJyvDZbjHT7EQfwwr9rn5TfLS8OwzU6MTP2SMSgiCOw_bKiV_L9S5tGiRa792XdIq09DWxXIDCS55Ze5f1dOxzmrK4xDVE2fJPhQpSOPfw8YKW8I-sdzgiqgGHXGzlfpgUb6rJoTdA_8mlicEzZn9T-OYiGf3tyAByip56x4Gdgxlv3Re9fa8HlLfARdxSnQAsID1QX1eDaSjBkbWqL3mr-Sm3eARFarrCgauZLk21oriIeqS6AocYSz20XAnIWRVM6pQv5UPm_7U32h0oh--fO7AsWNgYZ7_WUD20mBLn_QUkguGTaRQhXkaReqoR9nju9SYe1cV5G7A",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [
 							{
@@ -552,7 +551,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0aea66ad-0a6e-4533-b192-a8b0af746c78",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -593,7 +591,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "113ee6fe-418d-4bf4-a641-444b5816e46b",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -603,7 +600,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5704da6d-dc7e-42b9-8214-aa7ecf075bca",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -617,7 +613,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fc871e59-eaa4-46e8-975b-87b750ad1804",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -627,7 +622,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e5766f23-c7f1-472b-ae34-825a91147815",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -637,7 +631,6 @@
 	],
 	"variable": [
 		{
-			"id": "7da0fa13-ecd9-4d7d-8e38-fde2c81cfdaf",
 			"key": "host",
 			"value": "localhost:5000",
 			"type": "string"
